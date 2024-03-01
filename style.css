@@ -1,0 +1,168 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/*o asterisco é o seletor universal, dita as leis no geral*/
+
+:root {
+  --text-color: white;
+  --bg-url: url(./assets/assets/bg-mobile.jpg);
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.1);
+  --surface-color-hover: rgba(255, 255, 255, 0.02);
+  --highligh-color: rgba(255, 255, 255, 0.2);
+  --switch-bg-url: url(./assets/moon-stars.svg);
+  --border-image: rgba(255, 255, 255, 0.5);
+}
+
+.light {
+  --text-color: black;
+  --bg-url: url(./assets/assets/bg-mobile-light.jpg);
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --highligh-color: rgba(0, 0, 0, 0.1);
+  --switch-bg-url: url(./assets/sun.svg);
+  --border-image: black;
+}
+
+body {
+  /*
+  background-image: url(./assets/assets/bg-mobile.jpg);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  */
+
+  /*background: color image repeat position/size*/
+  background: var(--bg-url) no-repeat top center/cover;
+}
+/*o elemento "body" com asterisco significa um seletor universal, ele ira aplicar td q tiver ali para os elementos dentro do body*/
+body * {
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+}
+#content {
+  width: 360px;
+  margin: auto;
+  margin: 56px auto 0px;
+  padding: 0 24px;
+}
+#profile {
+  text-align: center;
+  padding: 24px;
+}
+#profile img {
+  display: flex;
+  margin: auto;
+  width: 112px;
+  border: 1px solid var(--border-image);
+  border-radius: 50%;
+}
+/*margin NÃO FUNCIONA se o elemento estiver com o display
+  "inline"*/
+/* displays inline aceitam ordens do "pai" deles,
+  text-align*/
+#profile p {
+  font-weight: 500; /*quanto maior o numero mais forte é o negrito*/
+  font-size: 16px; /*Tamanho do Texto*/
+  line-height: 24px; /*semelhante ao "padding", a quantidade de px é a quantidade de preenchimento ao redor da frase*/
+  margin-top: 8px;
+}
+
+/*switch*/
+
+#switch {
+  position: relative;
+  width: 64px;
+
+  margin: 4px auto;
+}
+
+#switch button {
+  width: 32px;
+  height: 32px;
+  background: white var(--switch-bg-url) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1;
+  transform: translateY(-50%);
+}
+#switch span {
+  width: 64px;
+  height: 24px;
+
+  background: var(--surface-color);
+  display: block;
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+
+.light #switch button {
+  right: 0;
+  left: initial;
+}
+
+/*Links - Lista*/
+ul {
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  padding-top: 24px;
+}
+ul li a {
+  display: flex;
+  justify-content: center;
+  padding: 16px 24px;
+
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  border-radius: 10px;
+
+  backdrop-filter: blur(4px);
+
+  text-decoration: none;
+  font-weight: 500;
+
+  transition: background 0.8s;
+}
+/*pseudo-selector*/
+ul li a:hover {
+  background: var(--surface-color-hover);
+  border: 1.5px solid var(--text-color);
+}
+
+/* social links */
+
+#Social-Links {
+  display: flex;
+  justify-content: center;
+
+  padding-top: 24px;
+  padding-bottom: 24px;
+
+  font-size: 24px;
+}
+
+#Social-Links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+
+  transition: background 0.5s;
+  border-radius: 50%;
+}
+
+#Social-Links a:hover {
+  background: var(--highligh-color);
+}
