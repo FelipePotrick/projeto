@@ -37,6 +37,7 @@ body {
 
   /*background: color image repeat position/size*/
   background: var(--bg-url) no-repeat top center/cover;
+  height: 100vh;
 }
 /*o elemento "body" com asterisco significa um seletor universal, ele ira aplicar td q tiver ali para os elementos dentro do body*/
 body * {
@@ -166,4 +167,16 @@ ul li a:hover {
 
 #Social-Links a:hover {
   background: var(--highligh-color);
+}
+
+/* media queries */
+
+@media (min-width: 700px) {
+  :root {
+    --bg-url: url(./assets/assets/bg-desktop.jpg);
+  }
+
+  .light {
+    --bg-url: url(./assets/assets/bg-desktop-light.jpg);
+  }
 }
