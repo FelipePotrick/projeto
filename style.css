@@ -92,9 +92,15 @@ body * {
   position: absolute;
   top: 50%;
   left: 0;
+  animation: slide-in-back 0.3s;
   z-index: 1;
   transform: translateY(-50%);
 }
+
+#switch button:hover {
+  outline: 8px solid var(--highligh-color);
+}
+
 #switch span {
   width: 64px;
   height: 24px;
@@ -107,8 +113,7 @@ body * {
 }
 
 .light #switch button {
-  right: 0;
-  left: initial;
+  animation: slide-in 0.3s forwards;
 }
 
 /*Links - Lista*/
@@ -178,5 +183,24 @@ ul li a:hover {
 
   .light {
     --bg-url: url(./assets/assets/bg-desktop-light.jpg);
+  }
+}
+
+/* animation */
+
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+@keyframes slide-in-back {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
   }
 }
